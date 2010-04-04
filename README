@@ -1,0 +1,33 @@
+Ruby Enc
+========
+
+A module implementing commonly used string encoders for various occasions. It's
+intended primary use is to include it in your scripts, but it implements a
+rudimentary command line client, too.
+
+Command Line Usage
+------------------
+    ./enc.rb <encoder> [params] <string from stdin>
+
+Examples
+--------
+    ./enc.rb Std::url <<< 'http://www.example.com?aa=bb&cc=dd'
+    http%3A%2F%2Fwww.example.com%3Faa%3Dbb%26cc%3Ddd%0A
+
+    ./enc.rb Std::url true <<< 'http://www.example.com?aa=bb&cc=dd'
+    %68%74%74%70%3A%2F%2F%77%77%77%2E%65%78%61%6D%70%6C%65%2E%63%6F%6D%3F%61%61%3D%62%62%26%63%63%3D%64%64%0A
+
+Be aware of the trailing newline in the example, which also gets encoded.
+
+License
+-------
+This software is licensed under the Creative Commons CC0 1.0 Universal License.
+To view a copy of this license, visit
+http://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Inspired by:
+* [wfuzz][1]
+* [rbkb][2]
+
+[1]: http://www.edge-security.com/wfuzz.php
+[2]: http://github.com/emonti/rbkb
