@@ -5,6 +5,8 @@ A module implementing commonly used string encoders for various occasions. It's
 intended primary use is to include it in your scripts, but it implements a
 rudimentary command line client, too.
 
+Download: git clone git@github.com:courts/enc.git
+
 Command Line Usage
 ------------------
     ./enc.rb <encoder> [params] <string from stdin>
