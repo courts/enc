@@ -7,6 +7,8 @@ rudimentary command line client, too.
 
 Download: git clone git@github.com:courts/enc.git
 
+YARD docs: [http://courts.github.com/enc](http://courts.github.com/enc)
+
 Command Line Usage
 ------------------
     ./enc.rb <encoder> [params] <string from stdin>
