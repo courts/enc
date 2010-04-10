@@ -44,8 +44,8 @@
     <div id="content"><div id='filecontents'><h1>Ruby Enc</h1>
 
 <p>A module implementing commonly used string encoders for various occasions. It's
-intended primary use is to include it in your scripts, but it implements a
-rudimentary command line client, too.</p>
+intended primary use is to include it in your scripts. A basic command line
+client is included.</p>
 
 <p>Download: git clone git@github.com:courts/enc.git</p>
 
@@ -53,19 +53,29 @@ rudimentary command line client, too.</p>
 
 <h2>Command Line Usage</h2>
 
-<pre class="code">./enc.rb &lt;encoder&gt; [params] &lt;string from stdin&gt;
+<p>There's a basic command line client in the /bin directory. Usage:</p>
+
+<pre class="code">encli.rb &lt;encoder&gt; [params] &lt;string from stdin&gt;
 </pre>
 
 <h2>Examples</h2>
 
-<pre class="code">./enc.rb Std::url &lt;&lt;&lt; 'http://www.example.com?aa=bb&amp;cc=dd'
+<pre class="code">encli.rb Std::url &lt;&lt;&lt; 'http://www.example.com?aa=bb&amp;cc=dd'
 http%3A%2F%2Fwww.example.com%3Faa%3Dbb%26cc%3Ddd%0A
 
-./enc.rb Std::url true &lt;&lt;&lt; 'http://www.example.com?aa=bb&amp;cc=dd'
+encli.rb Std::url true &lt;&lt;&lt; 'http://www.example.com?aa=bb&amp;cc=dd'
 %68%74%74%70%3A%2F%2F%77%77%77%2E%65%78%61%6D%70%6C%65%2E%63%6F%6D%3F%61%61%3D%62%62%26%63%63%3D%64%64%0A
 </pre>
 
 <p>Be aware of the trailing newline in the example, which also gets encoded.</p>
+
+<h2>RubyGems</h2>
+
+<p>A gemspec file is included, so you can build and install Enc as a gem with:</p>
+
+<pre class="code"><span class='id gem'>gem</span> <span class='id build'>build</span> <span class='const'>Enc</span><span class='period'>.</span><span class='id gemspec'>gemspec</span>
+<span class='id gem'>gem</span> <span class='id install'>install</span> <span class='const'>Enc</span><span class='op'>-</span><span class='id x'>x</span><span class='period'>.</span><span class='id x'>x</span><span class='period'>.</span><span class='id x'>x</span><span class='period'>.</span><span class='id gem'>gem</span>
+</pre>
 
 <h2>License</h2>
 
@@ -78,7 +88,7 @@ http://creativecommons.org/publicdomain/zero/1.0/legalcode</p>
 * <a href="http://github.com/emonti/rbkb">rbkb</a></p></div></div>
     
     <div id="footer">
-  Generated on Fri Apr  9 23:11:25 2010 by 
+  Generated on Sat Apr 10 18:13:34 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.9.1).
 </div>

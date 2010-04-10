@@ -57,7 +57,7 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">enc.rb</dd>
+    <dd class="r1 last">lib/enc.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -179,14 +179,14 @@
       <pre class="lines">
 
 
+127
+128
 129
 130
-131
-132
-133</pre>
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'enc.rb', line 129</span>
+      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='const'>UTF8</span><span class='op'>::</span><span class='id bin'>bin</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
   <span class='id data'>data</span><span class='period'>.</span><span class='id split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id x'>x</span><span class='op'>|</span>
@@ -253,6 +253,8 @@
       <pre class="lines">
 
 
+137
+138
 139
 140
 141
@@ -260,12 +262,10 @@
 143
 144
 145
-146
-147
-148</pre>
+146</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'enc.rb', line 139</span>
+      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 137</span>
 
 <span class='kw'>def</span> <span class='const'>UTF8</span><span class='op'>::</span><span class='id utf8'>utf8</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
   <span class='id data'>data</span><span class='period'>.</span><span class='id split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id x'>x</span><span class='op'>|</span>
@@ -287,7 +287,7 @@
 </div>
     
     <div id="footer">
-  Generated on Fri Apr  9 23:11:26 2010 by 
+  Generated on Sat Apr 10 18:13:35 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.9.1).
 </div>
