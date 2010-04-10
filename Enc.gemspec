@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.date = %q{2010-04-10}
   s.email = %q{courts@offensivethinking.org}
   s.files = ["README", "Rakefile", "bin/encli.rb", "lib/enc.rb", "test/spec_enc.rb"]
+  s.executables = ["encli"]
   s.homepage = %q{http://www.offensivethinking.org}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
