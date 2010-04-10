@@ -11,6 +11,7 @@
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'enc')
 
+fname = File.basename(__FILE__)
 help_text = [
   "",
   "Available Encoders",
@@ -23,11 +24,11 @@ Enc.constants.sort.each do |c|
 end
 help_text += [
   "",
-  "Usage: #{__FILE__} <encoder> [params] <string from stdin>",
+  "Usage: #{fname} <encoder> [params] <string from stdin>",
   "",
   "Examples:",
-  "#{__FILE__} Std::url <<< '<script>'",
-  "#{__FILE__} Std::url true <<< '<script>'",
+  "#{fname} Std::url <<< '<script>'",
+  "#{fname} Std::url true <<< '<script>'",
   "",
   "Please see the YARD documentation for available parameters.",
   "",
