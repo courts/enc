@@ -1,5 +1,5 @@
 require 'bacon'
-require File.join(File.dirname(__FILE__), '..', 'enc')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'enc')
 
 include Enc
 
