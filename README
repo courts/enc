@@ -1,12 +1,15 @@
 Ruby Enc
 ========
 
+Author:      Patrick Hof <courts@offensivethinking.org>  
+License:     [CC0 1.0 Universal License](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+Download:    git clone git@github.com:courts/enc.git  
+YARD docs:   [http://courts.github.com/enc](http://courts.github.com/enc)
+
 A module implementing commonly used string encoders for various occasions. It's
 intended primary use is to include it in your scripts. A basic command line
 client is included.
-
-Download: git clone git@github.com:courts/enc.git  
-YARD docs: [http://courts.github.com/enc](http://courts.github.com/enc)
 
 Command Line Usage
 ------------------
@@ -33,11 +36,7 @@ A gemspec file is included, so you can build and install Enc as a gem with:
     gem build Enc.gemspec
     gem install Enc-x.x.x.gem
 
-License
--------
-This software is licensed under the Creative Commons CC0 1.0 Universal License.
-To view a copy of this license, visit
-http://creativecommons.org/publicdomain/zero/1.0/legalcode
+---
 
 Inspired by:
 
