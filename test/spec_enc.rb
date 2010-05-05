@@ -51,6 +51,10 @@ describe Enc do
     HTML::hex(@url_text).should.equal '&#x68;&#x74;&#x74;&#x70;&#x3A;&#x2F;&#x2F;&#x77;&#x77;&#x77;&#x2E;&#x65;&#x78;&#x61;&#x6D;&#x70;&#x6C;&#x65;&#x2E;&#x63;&#x6F;&#x6D;&#x3F;&#x61;&#x61;&#x3D;&#x62;&#x62;&#x26;&#x63;&#x63;&#x3D;&#x64;&#x64;'
   end
 
+  it "should return a JavaScript string.fromCharCode() representation when sent JS::charcode()" do
+    JS::charcode(@url_text).should.equal 'string.fromCharCode(104,116,116,112,58,47,47,119,119,119,46,101,120,97,109,112,108,101,46,99,111,109,63,97,97,61,98,98,38,99,99,61,100,100)'
+  end
+
   it "should return the UTF-8 binary representation of a string when sent UTF8::bin()" do
     UTF8::bin(@url_text).should.equal '\x68\x74\x74\x70\x3A\x2F\x2F\x77\x77\x77\x2E\x65\x78\x61\x6D\x70\x6C\x65\x2E\x63\x6F\x6D\x3F\x61\x61\x3D\x62\x62\x26\x63\x63\x3D\x64\x64'
   end

@@ -118,6 +118,18 @@ module Enc
     end
   end
 
+  # JavaScript encoders.
+  module JS
+    # Encodes a string with JavaScript string.fromCharCode(), e.g.
+    # string.fromCharCode(98,99,100)
+    #
+    # @param [String] data The string to encode
+    # @return [String] The encoded string
+    def JS::charcode(data)
+      "string.fromCharCode(" + data.unpack("c*").join(",") + ")"
+    end
+  end
+
   # UTF-8 encoders.
   module UTF8
     # UTF8 binary encodes a string
