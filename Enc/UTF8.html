@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
 <title>Module: Enc::UTF8</title>
 <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
@@ -56,6 +56,7 @@
     
   
   
+  
     <dt class="r1 last">Defined in:</dt>
     <dd class="r1 last">lib/enc.rb</dd>
   
@@ -73,11 +74,12 @@
 </div>
 
 
-  <h2>Class Method Summary</h2>
+  
+    <h2>Class Method Summary</h2>
 
-  <ul class="summary">
-    
-      <li class="public ">
+    <ul class="summary">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#bin-class_method" title="bin (class method)">+ (String) <strong>bin</strong>(data) </a>
@@ -92,12 +94,12 @@
   
 
   
-    <span class="summary_desc">UTF8 binary encodes a string.</span>
+    <span class="summary_desc"><div class='inline'><p>UTF8 binary encodes a string.</p></div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#utf8-class_method" title="utf8 (class method)">+ (String) <strong>utf8</strong>(data) </a>
@@ -112,12 +114,14 @@
   
 
   
-    <span class="summary_desc">UTF8 encodes a string.</span>
+    <span class="summary_desc"><div class='inline'><p>UTF8 encodes a string.</p></div></span>
   
 </li>
 
-    
-  </ul>
+      
+    </ul>
+  
+
 
 
   <div id="class_method_details" class="method_details_list">
@@ -151,7 +155,7 @@
       
       
         &mdash;
-        The string to encode
+        <div class='inline'><p>The string to encode</p></div>
       
     </li>
   
@@ -167,7 +171,7 @@
       
       
         &mdash;
-        The encoded string
+        <div class='inline'><p>The encoded string</p></div>
       
     </li>
   
@@ -179,14 +183,14 @@
       <pre class="lines">
 
 
-127
-128
-129
-130
-131</pre>
+139
+140
+141
+142
+143</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 139</span>
 
 <span class='kw'>def</span> <span class='const'>UTF8</span><span class='op'>::</span><span class='id bin'>bin</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
   <span class='id data'>data</span><span class='period'>.</span><span class='id split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id x'>x</span><span class='op'>|</span>
@@ -225,7 +229,7 @@
       
       
         &mdash;
-        The string to encode
+        <div class='inline'><p>The string to encode</p></div>
       
     </li>
   
@@ -241,7 +245,7 @@
       
       
         &mdash;
-        The encoded string
+        <div class='inline'><p>The encoded string</p></div>
       
     </li>
   
@@ -253,19 +257,19 @@
       <pre class="lines">
 
 
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146</pre>
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 137</span>
+      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 149</span>
 
 <span class='kw'>def</span> <span class='const'>UTF8</span><span class='op'>::</span><span class='id utf8'>utf8</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
   <span class='id data'>data</span><span class='period'>.</span><span class='id split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id x'>x</span><span class='op'>|</span>
@@ -287,9 +291,9 @@
 </div>
     
     <div id="footer">
-  Generated on Sun Apr 11 14:22:11 2010 by 
+  Generated on Wed May  5 15:31:34 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.3 (ruby-1.9.1).
+  0.5.4 (ruby-1.9.1).
 </div>
 
   </body>
