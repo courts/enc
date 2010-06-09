@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta name="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
 <title>Module: Enc::MSSQL</title>
 <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
@@ -56,7 +56,6 @@
     
   
   
-  
     <dt class="r1 last">Defined in:</dt>
     <dd class="r1 last">lib/enc.rb</dd>
   
@@ -74,12 +73,11 @@
 </div>
 
 
-  
-    <h2>Class Method Summary</h2>
+  <h2>Class Method Summary</h2>
 
-    <ul class="summary">
-      
-        <li class="public ">
+  <ul class="summary">
+    
+      <li class="public ">
   <span class="summary_signature">
     
       <a href="#char-class_method" title="char (class method)">+ (String) <strong>char</strong>(data) </a>
@@ -94,14 +92,12 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Encodes a string as MSSQL CHARs, e.g.</p></div></span>
+    <span class="summary_desc">Encodes a string as MSSQL CHARs, e.g.</span>
   
 </li>
 
-      
-    </ul>
-  
-
+    
+  </ul>
 
 
   <div id="class_method_details" class="method_details_list">
@@ -135,7 +131,7 @@
       
       
         &mdash;
-        <div class='inline'><p>The string to encode</p></div>
+        The string to encode
       
     </li>
   
@@ -151,7 +147,7 @@
       
       
         &mdash;
-        <div class='inline'><p>The encoded string</p></div>
+        The encoded string
       
     </li>
   
@@ -163,14 +159,14 @@
       <pre class="lines">
 
 
-186
-187
-188
-189
-190</pre>
+198
+199
+200
+201
+202</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 186</span>
+      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 198</span>
 
 <span class='kw'>def</span> <span class='const'>MSSQL</span><span class='op'>::</span><span class='id char'>char</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
   <span class='id data'>data</span><span class='period'>.</span><span class='id unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id x'>x</span><span class='op'>|</span>
@@ -187,9 +183,9 @@
 </div>
     
     <div id="footer">
-  Generated on Wed May  5 15:35:39 2010 by 
+  Generated on Wed Jun  9 18:45:21 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.4 (ruby-1.9.1).
+  0.5.3 (ruby-1.9.1).
 </div>
 
   </body>
