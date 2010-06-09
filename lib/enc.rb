@@ -31,6 +31,18 @@ module Enc
       end
     end
 
+    # Returns a URL encoded string of the given data's raw bytes
+    #
+    # @param [String] data The data to URL encode
+    # @return [String] the URL encoded string
+    def Std::url_raw(data)
+      res = ""
+      data.each_byte do |x|
+        res << ("%" + (sprintf "%02X" % x))
+      end
+      res.upcase
+    end
+
     # Returns the base64 representation of the given data
     #
     # @param [String] bin The data to encode in base64
