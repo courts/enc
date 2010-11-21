@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
 <title>Module: Enc::Std</title>
 <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
@@ -24,7 +24,7 @@
       <div id="menu">
   
     <a href="../_index.html">Index (S)</a> &raquo; 
-    <span class='title'><a href="../Enc.html" title="Enc (module)">Enc</a></span>
+    <span class='title'><span class='object_link'><a href="../Enc.html" title="Enc (module)">Enc</a></span></span>
      &raquo; 
     <span class="title">Std</span>
   
@@ -43,7 +43,8 @@
     
     <iframe id="search_frame"></iframe>
     
-    <div id="content"><h1>Module: Enc::Std 
+    <div id="content"><h1>Module: Enc::Std
+  
   
   
 </h1>
@@ -56,6 +57,7 @@
     
   
   
+  
     <dt class="r1 last">Defined in:</dt>
     <dd class="r1 last">lib/enc.rb</dd>
   
@@ -64,7 +66,10 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>Contains all encoders not fitting into a specific category.</p>
+    <p>
+Contains all encoders not fitting into a specific category.
+</p>
+
 
   </div>
 </div>
@@ -73,11 +78,15 @@
 </div>
 
 
-  <h2>Class Method Summary</h2>
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
-  <ul class="summary">
-    
-      <li class="public ">
+    <ul class="summary">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#b64-class_method" title="b64 (class method)">+ (String) <strong>b64</strong>(bin) </a>
@@ -90,14 +99,18 @@
   
   
   
+  
 
   
-    <span class="summary_desc">Returns the base64 representation of the given data.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Returns the base64 representation of the given data.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#hex-class_method" title="hex (class method)">+ (String) <strong>hex</strong>(data) </a>
@@ -110,14 +123,18 @@
   
   
   
+  
 
   
-    <span class="summary_desc">Returns the hex representation of data.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Returns the hex representation of data.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#md5-class_method" title="md5 (class method)">+ (String) <strong>md5</strong>(data) </a>
@@ -130,14 +147,18 @@
   
   
   
+  
 
   
-    <span class="summary_desc">Returns the MD5 encoded hex string of the given string.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Returns the MD5 encoded hex string of the given string.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#rand_upcase-class_method" title="rand_upcase (class method)">+ (String) <strong>rand_upcase</strong>(data) </a>
@@ -150,14 +171,18 @@
   
   
   
+  
 
   
-    <span class="summary_desc">Takes a string and returns the string with randomly uppercased characters.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Takes a string and returns the string with randomly uppercased characters.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#sha1-class_method" title="sha1 (class method)">+ (String) <strong>sha1</strong>(data) </a>
@@ -170,14 +195,18 @@
   
   
   
+  
 
   
-    <span class="summary_desc">Returns the SHA1 encoded hex string of the given string.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Returns the SHA1 encoded hex string of the given string.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#url-class_method" title="url (class method)">+ (String) <strong>url</strong>(data, all = false) </a>
@@ -190,14 +219,18 @@
   
   
   
+  
 
   
-    <span class="summary_desc">Returns a URL encoded string.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Returns a URL encoded string.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#url_raw-class_method" title="url_raw (class method)">+ (String) <strong>url_raw</strong>(data) </a>
@@ -210,14 +243,18 @@
   
   
   
+  
 
   
-    <span class="summary_desc">Returns a URL encoded string of the given data's raw bytes.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Returns a URL encoded string of the given data&#8217;s raw bytes.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#xor-class_method" title="xor (class method)">+ (String) <strong>xor</strong>(data, key) </a>
@@ -230,14 +267,20 @@
   
   
   
+  
 
   
-    <span class="summary_desc">XOR a string with another string.</span>
+    <span class="summary_desc"><div class='inline'><p>
+XOR a string with another string.
+</p>
+</div></span>
   
 </li>
 
-    
-  </ul>
+      
+    </ul>
+  
+
 
 
   <div id="class_method_details" class="method_details_list">
@@ -253,7 +296,10 @@
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Returns the base64 representation of the given data</p>
+    <p>
+Returns the base64 representation of the given data
+</p>
+
 
   </div>
 </div>
@@ -271,7 +317,10 @@
       
       
         &mdash;
-        The data to encode in base64
+        <div class='inline'><p>
+The data to encode in base64
+</p>
+</div>
       
     </li>
   
@@ -287,7 +336,10 @@
       
       
         &mdash;
-        Base64 encoded string of the given data
+        <div class='inline'><p>
+Base64 encoded string of the given data
+</p>
+</div>
       
     </li>
   
@@ -323,7 +375,10 @@
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Returns the hex representation of data</p>
+    <p>
+Returns the hex representation of data
+</p>
+
 
   </div>
 </div>
@@ -341,7 +396,10 @@
       
       
         &mdash;
-        The data to transform
+        <div class='inline'><p>
+The data to transform
+</p>
+</div>
       
     </li>
   
@@ -357,7 +415,10 @@
       
       
         &mdash;
-        Hex representation of data
+        <div class='inline'><p>
+Hex representation of data
+</p>
+</div>
       
     </li>
   
@@ -393,7 +454,10 @@
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Returns the MD5 encoded hex string of the given string</p>
+    <p>
+Returns the MD5 encoded hex string of the given string
+</p>
+
 
   </div>
 </div>
@@ -411,7 +475,10 @@
       
       
         &mdash;
-        The string to transform
+        <div class='inline'><p>
+The string to transform
+</p>
+</div>
       
     </li>
   
@@ -427,7 +494,10 @@
       
       
         &mdash;
-        MD5 encoded string (hex)
+        <div class='inline'><p>
+MD5 encoded string (hex)
+</p>
+</div>
       
     </li>
   
@@ -463,7 +533,10 @@
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Takes a string and returns the string with randomly uppercased characters</p>
+    <p>
+Takes a string and returns the string with randomly uppercased characters
+</p>
+
 
   </div>
 </div>
@@ -481,7 +554,10 @@
       
       
         &mdash;
-        The string to transform
+        <div class='inline'><p>
+The string to transform
+</p>
+</div>
       
     </li>
   
@@ -497,7 +573,10 @@
       
       
         &mdash;
-        The string with randomly uppercased characters
+        <div class='inline'><p>
+The string with randomly uppercased characters
+</p>
+</div>
       
     </li>
   
@@ -537,7 +616,10 @@
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Returns the SHA1 encoded hex string of the given string</p>
+    <p>
+Returns the SHA1 encoded hex string of the given string
+</p>
+
 
   </div>
 </div>
@@ -555,7 +637,10 @@
       
       
         &mdash;
-        The string to transform
+        <div class='inline'><p>
+The string to transform
+</p>
+</div>
       
     </li>
   
@@ -571,7 +656,10 @@
       
       
         &mdash;
-        SHA1 encoded string (hex)
+        <div class='inline'><p>
+SHA1 encoded string (hex)
+</p>
+</div>
       
     </li>
   
@@ -607,7 +695,10 @@
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Returns a URL encoded string</p>
+    <p>
+Returns a URL encoded string
+</p>
+
 
   </div>
 </div>
@@ -625,7 +716,10 @@
       
       
         &mdash;
-        The data to URL encode
+        <div class='inline'><p>
+The data to URL encode
+</p>
+</div>
       
     </li>
   
@@ -641,7 +735,11 @@
       
       
         &mdash;
-        Whether to encode the whole string or only the necessary parts (default is false)
+        <div class='inline'><p>
+Whether to encode the whole string or only the necessary parts (default is
+false)
+</p>
+</div>
       
     </li>
   
@@ -657,7 +755,10 @@
       
       
         &mdash;
-        the URL encoded string
+        <div class='inline'><p>
+the URL encoded string
+</p>
+</div>
       
     </li>
   
@@ -705,7 +806,10 @@
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Returns a URL encoded string of the given data's raw bytes</p>
+    <p>
+Returns a URL encoded string of the given data&#8217;s raw bytes
+</p>
+
 
   </div>
 </div>
@@ -723,7 +827,10 @@
       
       
         &mdash;
-        The data to URL encode
+        <div class='inline'><p>
+The data to URL encode
+</p>
+</div>
       
     </li>
   
@@ -739,7 +846,10 @@
       
       
         &mdash;
-        the URL encoded string
+        <div class='inline'><p>
+the URL encoded string
+</p>
+</div>
       
     </li>
   
@@ -783,10 +893,14 @@
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>XOR a string with another string</p>
+    <p>
+XOR a string with another string
+</p>
+<p>
+Adapted from <a
+href="http://rubyforge.org/snippet/detail.php?type=snippet&id=108">rubyforge.org/snippet/detail.php?type=snippet&id=108</a>
+</p>
 
-<p>Adapted from
-http://rubyforge.org/snippet/detail.php?type=snippet&amp;id=108</p>
 
   </div>
 </div>
@@ -804,7 +918,10 @@ http://rubyforge.org/snippet/detail.php?type=snippet&amp;id=108</p>
       
       
         &mdash;
-        The original string
+        <div class='inline'><p>
+The original string
+</p>
+</div>
       
     </li>
   
@@ -818,7 +935,10 @@ http://rubyforge.org/snippet/detail.php?type=snippet&amp;id=108</p>
       
       
         &mdash;
-        The string to XOR with
+        <div class='inline'><p>
+The string to XOR with
+</p>
+</div>
       
     </li>
   
@@ -834,7 +954,10 @@ http://rubyforge.org/snippet/detail.php?type=snippet&amp;id=108</p>
       
       
         &mdash;
-        the XOR'ed string
+        <div class='inline'><p>
+the XOR&#8217;ed string
+</p>
+</div>
       
     </li>
   
@@ -868,9 +991,9 @@ http://rubyforge.org/snippet/detail.php?type=snippet&amp;id=108</p>
 </div>
     
     <div id="footer">
-  Generated on Wed Jun  9 18:45:20 2010 by 
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.3 (ruby-1.9.1).
+  Generated on Sun Nov 21 16:35:11 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.2 (ruby-1.9.1).
 </div>
 
   </body>
