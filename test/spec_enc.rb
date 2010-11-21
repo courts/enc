@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'bacon'
 require File.join(File.dirname(__FILE__), '..', 'lib', 'enc')
 
@@ -8,6 +9,7 @@ describe Enc do
   before do
     @url_text = "http://www.example.com?aa=bb&cc=dd"
     @sql_text = "SELECT * FROM users WHERE id = '1' AND pass='password'"
+    @utf8_text = "aabbäöü"
   end
 
   it "should return a URL encoded string (either fully or only partially) when sent Std::url()" do
@@ -59,14 +61,6 @@ describe Enc do
     JS::charcode(@url_text).should.equal 'string.fromCharCode(104,116,116,112,58,47,47,119,119,119,46,101,120,97,109,112,108,101,46,99,111,109,63,97,97,61,98,98,38,99,99,61,100,100)'
   end
 
-  it "should return the UTF-8 binary representation of a string when sent UTF8::bin()" do
-    UTF8::bin(@url_text).should.equal '\x68\x74\x74\x70\x3A\x2F\x2F\x77\x77\x77\x2E\x65\x78\x61\x6D\x70\x6C\x65\x2E\x63\x6F\x6D\x3F\x61\x61\x3D\x62\x62\x26\x63\x63\x3D\x64\x64'
-  end
-
-  it "should return the UTF-8 representation of a string when sent UTF8::utf8()" do
-    UTF8::utf8(@url_text).should.equal '\u0068\u0074\u0074\u0070\u003A\u002F\u002F\u0077\u0077\u0077\u002E\u0065\u0078\u0061\u006D\u0070\u006C\u0065\u002E\u0063\u006F\u006D\u003F\u0061\u0061\u003D\u0062\u0062\u0026\u0063\u0063\u003D\u0064\u0064'
-  end
-  
   it "should return a MySQL CHAR representation when sent MySQL::char()" do
     MySQL::char(@sql_text).should.equal 'CHAR(83,69,76,69,67,84,32,42,32,70,82,79,77,32,117,115,101,114,115,32,87,72,69,82,69,32,105,100,32,61,32,39,49,39,32,65,78,68,32,112,97,115,115,61,39,112,97,115,115,119,111,114,100,39)'
   end

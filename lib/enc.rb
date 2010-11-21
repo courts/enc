@@ -142,34 +142,6 @@ module Enc
     end
   end
 
-  # UTF-8 encoders.
-  module UTF8
-    # UTF8 binary encodes a string
-    #
-    # @param [String] data The string to encode
-    # @return [String] The encoded string
-    def UTF8::bin(data)
-      data.split("").map do |x|
-        "\\x" + x.unpack('H*')[0].upcase
-      end.join
-    end
-
-    # UTF8 encodes a string
-    #
-    # @param [String] data The string to encode
-    # @return [String] The encoded string
-    def UTF8::utf8(data)
-      data.split("").map do |x|
-        val = x.unpack('H*')[0].upcase
-        if val.length == 2
-          "\\u00" + val
-        else
-          "\\u" + val
-        end
-      end.join
-    end
-  end
-
   # Encoders returning valid MySQL strings.
   module MySQL
     # Encodes a string as MySQL CHAR, e.g. CHAR(98,99,100)

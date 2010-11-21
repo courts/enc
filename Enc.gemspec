@@ -2,14 +2,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{Enc}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Patrick Hof"]
   s.date = %q{2010-04-10}
   s.email = %q{courts@offensivethinking.org}
-  s.files = ["README.markdown", "Rakefile", "bin/encli", "lib/enc.rb", "test/spec_enc.rb"]
-  s.executables = ["encli"]
+  s.files = ["README.markdown", "Rakefile", "bin/enc-cli", "bin/dec-cli", "lib/dec.rb", "lib/enc.rb", "test/spec_enc.rb", "test/spec_dec.rb"]
+  s.executables = ["enc-cli", "dec-cli"]
   s.homepage = %q{http://www.offensivethinking.org}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
