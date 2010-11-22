@@ -46,9 +46,12 @@ module Enc
     # Returns the base64 representation of the given data
     #
     # @param [String] bin The data to encode in base64
+    # @param [Boolean] wether to split lines with newlines or not (default is false)
     # @return [String] Base64 encoded string of the given data
-    def Std::b64(bin)
-      [bin].pack("m").chomp
+    def Std::b64(bin, split=false)
+      b64 = [bin].pack("m").chomp
+      b64.gsub!("\n", "") unless split
+      return b64
     end
 
     # XOR a string with another string

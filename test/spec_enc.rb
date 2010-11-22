@@ -25,6 +25,14 @@ describe Enc do
     Std::b64("test").should.equal "dGVzdA=="
   end
 
+  it "should return a base64 representation of any binary data given to Std::b64() and not split the lines" do
+    Std::b64("A"*46).should.equal "QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQ=="
+  end
+
+  it "should return a base64 representation of any binary data given to Std::b64() and split the lines" do
+    Std::b64("A"*46, split=true).should.equal "QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB\nQQ=="
+  end
+
   it "should return a transformed string with randomly uppercased characters with Std::rand_upcase()" do
     Std::rand_upcase(@url_text).downcase.should.equal @url_text
   end
