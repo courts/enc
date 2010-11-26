@@ -69,6 +69,10 @@ describe Enc do
     JS::charcode(@url_text).should.equal 'string.fromCharCode(104,116,116,112,58,47,47,119,119,119,46,101,120,97,109,112,108,101,46,99,111,109,63,97,97,61,98,98,38,99,99,61,100,100)'
   end
 
+  it "should return a MySQL hex representation when sent MySQL::hex()" do
+    MySQL::hex(@url_text).should.equal "0x687474703A2F2F7777772E6578616D706C652E636F6D3F61613D62622663633D6464"
+  end
+
   it "should return a MySQL CHAR representation when sent MySQL::char()" do
     MySQL::char(@sql_text).should.equal 'CHAR(83,69,76,69,67,84,32,42,32,70,82,79,77,32,117,115,101,114,115,32,87,72,69,82,69,32,105,100,32,61,32,39,49,39,32,65,78,68,32,112,97,115,115,61,39,112,97,115,115,119,111,114,100,39)'
   end

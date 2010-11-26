@@ -147,6 +147,14 @@ module Enc
 
   # Encoders returning valid MySQL strings.
   module MySQL
+    # Returns the MySQL hex representation of data
+    #
+    # @param [String] data The data to transform
+    # @return [String] MySQL hex representation of data
+    def MySQL::hex(data)
+      return "0x#{Std::hex(data)}"
+    end
+
     # Encodes a string as MySQL CHAR, e.g. CHAR(98,99,100)
     #
     # @param [String] data The string to encode
