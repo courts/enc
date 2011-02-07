@@ -33,14 +33,10 @@ module Enc
 
     # Returns a URL encoded string of the given data's raw bytes
     #
-    # @param [String] data The data to URL encode
+    # @param [String, Fixnum, #each] data The data to URL encode
     # @return [String] the URL encoded string
     def Std::url_raw(data)
-      res = ""
-      data.each_byte do |x|
-        res << ("%" + (sprintf "%02X" % x))
-      end
-      res.upcase
+      Std::hex_as_ary(data).map {|x| "%#{x}"}.join("")
     end
 
     # Returns the base64 representation of the given data
@@ -77,6 +73,7 @@ module Enc
         if rand(2) == 0 then x.upcase else x end
       end.join
     end
+
     # Returns the SHA1 encoded hex string of the given string
     #
     # @param [String] data The string to transform
@@ -95,10 +92,41 @@ module Enc
 
     # Returns the hex representation of data
     #
-    # @param [String] data The data to transform
+    # @param [String, Fixnum, #each] data The data to transform
     # @return [String] Hex representation of data
     def Std::hex(data)
-      data.unpack('H*')[0].upcase
+      Std::hex_as_ary(data).join("")
+    end
+
+    # Returns the hex representation of data
+    #
+    # @param [String, Fixnum, #each] data The data to transform
+    # @return [Array] Hex representation of data
+    def Std::hex_as_ary(data)
+      func = nil
+      res = []
+      if data.respond_to? 'each'
+        func = :each
+      elsif data.class == String
+        func = :each_byte
+      end
+      if func
+        data.send(func) do |x|
+          res << Std::hex_char(x)
+        end
+      else
+        res = [Std::hex_char(data)]
+      end
+      res
+    end
+
+    # Returns the hex representation of an Integer. Also accepts a one
+    # character string.
+    #
+    # @param [Char, Fixnum] data The data to transform
+    # @return [String] Hex representation of data
+    def Std::hex_char(data)
+      return "%02X" % data.ord
     end
   end
 

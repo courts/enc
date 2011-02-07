@@ -19,6 +19,10 @@ describe Enc do
 
   it "should return a URL encoded string of the raw data's bytes when sent Std::url_raw()" do
     Std::url_raw("\x00\x01\xEF\xFF").should.equal "%00%01%EF%FF"
+    Std::url_raw(255).should.equal "%FF"
+    Std::url_raw(254..255).should.equal "%FE%FF"
+    Std::url_raw([254,255]).should.equal "%FE%FF"
+    Std::url_raw(['a', 'b']).should.equal "%61%62"
   end
 
   it "should return a base64 representation of any binary data given to Std::b64()" do
@@ -47,6 +51,10 @@ describe Enc do
 
   it "should return the hex represenation of binary data if sent Std::hex()" do
     Std::hex(@url_text).should.equal "687474703A2F2F7777772E6578616D706C652E636F6D3F61613D62622663633D6464"
+    Std::hex(255).should.equal "FF"
+    Std::hex(254..255).should.equal "FEFF"
+    Std::hex([254,255]).should.equal "FEFF"
+    Std::hex(['a', 'b']).should.equal "6162"
   end
 
   it "should XOR two strings when sent Std::xor()" do
