@@ -18,26 +18,17 @@ module Enc
   module Std
     # Returns a URL encoded string
     #
-    # @param [String] data The data to URL encode
+    # @param [String, Fixnum, #each] data The data to URL encode
     # @param [Boolean] all Whether to encode the whole string or only the
-    #   necessary parts (default is false)
+    #   necessary parts (default is false). If the data is not a string, it will
+    #   always be fully encoded at the moment.
     # @return [String] the URL encoded string
     def Std::url(data, all=false)
-      if all
-        data.split("").map do |x|
-          "%" + x.unpack('H*')[0]
-        end.join.upcase
+      if all || (data.class != String)
+        Std::hex_as_ary(data).map {|x| "%#{x}"}.join("")
       else
         CGI.escape(data)
       end
-    end
-
-    # Returns a URL encoded string of the given data's raw bytes
-    #
-    # @param [String, Fixnum, #each] data The data to URL encode
-    # @return [String] the URL encoded string
-    def Std::url_raw(data)
-      Std::hex_as_ary(data).map {|x| "%#{x}"}.join("")
     end
 
     # Returns the base64 representation of the given data

@@ -14,15 +14,11 @@ describe Enc do
 
   it "should return a URL encoded string (either fully or only partially) when sent Std::url()" do
     Std::url(@url_text).should.equal 'http%3A%2F%2Fwww.example.com%3Faa%3Dbb%26cc%3Ddd'
-    Std::url(@url_text, all=true).should.equal '%68%74%74%70%3A%2F%2F%77%77%77%2E%65%78%61%6D%70%6C%65%2E%63%6F%6D%3F%61%61%3D%62%62%26%63%63%3D%64%64'
-  end
-
-  it "should return a URL encoded string of the raw data's bytes when sent Std::url_raw()" do
-    Std::url_raw("\x00\x01\xEF\xFF").should.equal "%00%01%EF%FF"
-    Std::url_raw(255).should.equal "%FF"
-    Std::url_raw(254..255).should.equal "%FE%FF"
-    Std::url_raw([254,255]).should.equal "%FE%FF"
-    Std::url_raw(['a', 'b']).should.equal "%61%62"
+    Std::url("\x00\x01\xEF\xFF", all=true).should.equal "%00%01%EF%FF"
+    Std::url(255).should.equal "%FF"
+    Std::url((254..255)).should.equal "%FE%FF"
+    Std::url([254,255]).should.equal "%FE%FF"
+    Std::url(['a', 'b']).should.equal "%61%62"
   end
 
   it "should return a base64 representation of any binary data given to Std::b64()" do
