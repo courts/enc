@@ -1,4 +1,5 @@
 require 'cgi'
+require 'base64'
 require 'yaml'
 require 'digest/sha1'
 require 'digest/md5'
@@ -42,10 +43,15 @@ module Enc
     # Returns the base64 representation of the given data
     #
     # @param [String] bin The data to encode in base64
-    # @param [Boolean] wether to split lines with newlines or not (default is false)
+    # @param [Boolean] split whether to split lines with newlines or not (default is false)
+    # @param [Boolean] htmlsafe whether to encode the string url-safe
     # @return [String] Base64 encoded string of the given data
-    def Std::b64(bin, split=false)
-      b64 = [bin].pack("m").chomp
+    def Std::b64(bin, split=false, htmlsafe=false)
+      if htmlsafe
+        b64 = Base64.urlsafe_encode64(bin)
+      else
+        b64 = [bin].pack("m").chomp
+      end
       b64.gsub!("\n", "") unless split
       return b64
     end
