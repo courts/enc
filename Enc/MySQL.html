@@ -113,30 +113,6 @@ Encodes a string as MySQL CHAR, e.g.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#comment-class_method" title="comment (class method)">+ (String) <strong>comment</strong>(data) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>
-Substitutes whitespace with MySQL comments .
-</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#hex-class_method" title="hex (class method)">+ (String) <strong>hex</strong>(data) </a>
     
 
@@ -231,94 +207,15 @@ The encoded string
       <pre class="lines">
 
 
-190
-191
-192</pre>
+228
+229
+230</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 190</span>
+      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 228</span>
 
 <span class='kw'>def</span> <span class='const'>MySQL</span><span class='op'>::</span><span class='id char'>char</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
-  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CHAR(</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id data'>data</span><span class='period'>.</span><span class='id unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>,</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <p class="signature " id="comment-class_method">
-  
-    + (<tt>String</tt>) <strong>comment</strong>(data) 
-  
-
-  
-</p><div class="docstring">
-  <div class="discussion">
-    <p>
-Substitutes whitespace with MySQL comments .
-</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <h3>Parameters:</h3>
-<ul class="param">
-  
-    <li>
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-        <span class='name'>data</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>
-The statement to encode
-</p>
-</div>
-      
-    </li>
-  
-</ul>
-<h3>Returns:</h3>
-<ul class="return">
-  
-    <li>
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>
-the encoded statement
-</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-198
-199
-200</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 198</span>
-
-<span class='kw'>def</span> <span class='const'>MySQL</span><span class='op'>::</span><span class='id comment'>comment</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
-  <span class='id data'>data</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s+</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/**/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CHAR(</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='const'>Std</span><span class='op'>::</span><span class='id ord_as_ary'>ord_as_ary</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>,</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -389,12 +286,12 @@ MySQL hex representation of data
       <pre class="lines">
 
 
-182
-183
-184</pre>
+220
+221
+222</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 182</span>
+      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 220</span>
 
 <span class='kw'>def</span> <span class='const'>MySQL</span><span class='op'>::</span><span class='id hex'>hex</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0x</span><span class='embexpr_beg'>#{</span><span class='const'>Std</span><span class='op'>::</span><span class='id hex'>hex</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -409,7 +306,7 @@ MySQL hex representation of data
 </div>
     
     <div id="footer">
-  Generated on Mon Feb  7 21:11:50 2011 by 
+  Generated on Wed Feb  9 21:34:07 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.4 (ruby-1.9.1).
 </div>
