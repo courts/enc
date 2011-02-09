@@ -59,6 +59,14 @@ describe Enc do
     Std::xor(@url_text, "test").should.equal "\x1C\x11\a\x04NJ\\\x03\x03\x12]\x11\f\x04\x1E\x04\x18\x00]\x17\e\bL\x15\x15X\x11\x16R\x06\x10I\x10\x01"
   end
 
+  it "should return an array of integers being the ordinal representation of a string's chars when sent Std::ord_as_ary()" do
+    Std::ord_as_ary(@url_text).should.equal [104,116,116,112,58,47,47,119,119,119,46,101,120,97,109,112,108,101,46,99,111,109,63,97,97,61,98,98,38,99,99,61,100,100]
+  end
+
+  it "should return a string with spaces swapped for comments when sent Std::comment()" do
+    Std::comment(@sql_text).should.equal "SELECT/**/*/**/FROM/**/users/**/WHERE/**/id/**/=/**/'1'/**/AND/**/pass='password'"
+  end
+
   it "should return a PHP chr() representation of a string when sent PHP::chr()" do
     PHP::chr("abc").should.equal "chr(97).chr(98).chr(99)"
   end
@@ -85,10 +93,6 @@ describe Enc do
 
   it "should return a MySQL CHAR representation when sent MySQL::char()" do
     MySQL::char(@sql_text).should.equal 'CHAR(83,69,76,69,67,84,32,42,32,70,82,79,77,32,117,115,101,114,115,32,87,72,69,82,69,32,105,100,32,61,32,39,49,39,32,65,78,68,32,112,97,115,115,61,39,112,97,115,115,119,111,114,100,39)'
-  end
-
-  it "should return a string with spaces swapped for comments when sent MySQL::comment()" do
-    MySQL::comment(@sql_text).should.equal "SELECT/**/*/**/FROM/**/users/**/WHERE/**/id/**/=/**/'1'/**/AND/**/pass='password'"
   end
 
   it "should return a MSSQL CHAR representation when sent MSSQL::char()" do

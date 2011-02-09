@@ -145,6 +145,14 @@ module Enc
     def Std::ord_as_ary(data)
       data.unpack("c*")
     end
+
+    # Substitutes whitespace with /**/ comments .
+    #
+    # @param [String] data The statement to encode
+    # @return [String] the encoded statement
+    def Std::comment(data)
+      data.gsub!(/\s+/, "/**/")
+    end
   end
 
   # PHP encoders
@@ -219,14 +227,6 @@ module Enc
     # @return [String] The encoded string
     def MySQL::char(data)
       "CHAR(" + Std::ord_as_ary(data).join(",") + ")"
-    end
-
-    # Substitutes whitespace with MySQL comments .
-    #
-    # @param [String] data The statement to encode
-    # @return [String] the encoded statement
-    def MySQL::comment(data)
-      data.gsub!(/\s+/, "/**/")
     end
   end
 
