@@ -136,6 +136,19 @@ module Enc
     end
   end
 
+  # PHP encoders
+  module PHP
+    # Encodes a string as PHP CHARs, e.g. chr(98).chr(99).chr(100)
+    #
+    # @param [String] data The string to encode
+    # @return [String] The encoded string
+    def PHP::chr(data)
+      data.unpack("c*").map do |x|
+        "chr(#{x})"
+      end.join(".")
+    end
+  end
+
   # Encoders converting strings to valid HTML.
   module HTML
     # HTML encodes a string

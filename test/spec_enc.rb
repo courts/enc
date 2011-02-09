@@ -61,6 +61,10 @@ describe Enc do
     Std::xor(@url_text, "test").should.equal "\x1C\x11\a\x04NJ\\\x03\x03\x12]\x11\f\x04\x1E\x04\x18\x00]\x17\e\bL\x15\x15X\x11\x16R\x06\x10I\x10\x01"
   end
 
+  it "should return a PHP chr() representation of a string when sent PHP::chr()" do
+    PHP::chr("abc").should.equal "chr(97).chr(98).chr(99)"
+  end
+
   it "should return an HTML escaped string when sent HTML::html()" do
     HTML::html(@url_text).should.equal "http://www.example.com?aa=bb&amp;cc=dd"
   end
