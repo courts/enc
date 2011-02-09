@@ -37,12 +37,14 @@ describe Enc do
     Std::rand_upcase(@url_text).downcase.should.equal @url_text
   end
 
-  it "should return the SHA1 hex string when sent Std::sha1()" do
+  it "should return the SHA1 (hex) string when sent Std::sha1()" do
     Std::sha1(@url_text).should.equal "ba53d1abf6b7c2fec072379fcd312920c02152c1"
+    Std::sha1(@url_text, raw=true).unpack("H*")[0].should.equal "ba53d1abf6b7c2fec072379fcd312920c02152c1"
   end
 
-  it "should return the MD5 hex string when sent Std::md5()" do
+  it "should return the MD5 (hex) string when sent Std::md5()" do
     Std::md5(@url_text).should.equal "052619cb4bae29861029b120f0b86d54"
+    Std::md5(@url_text, raw=true).unpack("H*")[0].should.equal "052619cb4bae29861029b120f0b86d54"
   end
 
   it "should return the hex represenation of binary data if sent Std::hex()" do

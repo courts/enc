@@ -71,20 +71,32 @@ module Enc
       end.join
     end
 
-    # Returns the SHA1 encoded hex string of the given string
+    # Returns the SHA1 encoded (hex) string of the given string
     #
     # @param [String] data The string to transform
+    # @param [Boolean] raw Wether to return the raw data if true or the hex
+    #   string (default: false)
     # @return [String] SHA1 encoded string (hex)
-    def Std::sha1(data)
-      Digest::SHA1.hexdigest(data)
+    def Std::sha1(data, raw=false)
+      if raw
+        Digest::SHA1.digest(data)
+      else
+        Digest::SHA1.hexdigest(data)
+      end
     end
 
-    # Returns the MD5 encoded hex string of the given string
+    # Returns the MD5 encoded (hex) string of the given string
     #
     # @param [String] data The string to transform
+    # @param [Boolean] raw Wether to return the raw data if true or the hex
+    #   string (default: false)
     # @return [String] MD5 encoded string (hex)
-    def Std::md5(data)
-      Digest::MD5.hexdigest(data)
+    def Std::md5(data, raw=false)
+      if raw
+        Digest::MD5.digest(data)
+      else
+        Digest::MD5.hexdigest(data)
+      end
     end
 
     # Returns the hex representation of data
@@ -125,6 +137,14 @@ module Enc
     def Std::hex_char(data)
       return "%02X" % data.ord
     end
+
+    # Returns the integer ordinals of a string
+    #
+    # @param [String] data The string to encode
+    # @return [Array<Fixnum>] Array of Integers
+    def Std::ord_as_ary(data)
+      data.unpack("c*")
+    end
   end
 
   # PHP encoders
@@ -134,7 +154,7 @@ module Enc
     # @param [String] data The string to encode
     # @return [String] The encoded string
     def PHP::chr(data)
-      data.unpack("c*").map do |x|
+      Std::ord_as_ary(data).map do |x|
         "chr(#{x})"
       end.join(".")
     end
@@ -155,7 +175,7 @@ module Enc
     # @param [String] data The string to encode
     # @return [String] The encoded string
     def HTML::dec(data)
-      data.unpack("c*").map do |x|
+      Std::ord_as_ary(data).map do |x|
         "&##{x};"
       end.join
     end
@@ -165,8 +185,8 @@ module Enc
     # @param [String] data The string to encode
     # @return [String] The encoded string
     def HTML::hex(data)
-      data.split("").map do |x|
-        "&#x" + x.unpack('H*')[0].upcase + ";"
+      Std::hex_as_ary(data).map do |x|
+        "&#x" + x + ";"
       end.join
     end
   end
@@ -179,7 +199,7 @@ module Enc
     # @param [String] data The string to encode
     # @return [String] The encoded string
     def JS::charcode(data)
-      "string.fromCharCode(" + data.unpack("c*").join(",") + ")"
+      "string.fromCharCode(" + Std::ord_as_ary(data).join(",") + ")"
     end
   end
 
@@ -198,7 +218,7 @@ module Enc
     # @param [String] data The string to encode
     # @return [String] The encoded string
     def MySQL::char(data)
-      "CHAR(" + data.unpack("c*").join(",") + ")"
+      "CHAR(" + Std::ord_as_ary(data).join(",") + ")"
     end
 
     # Substitutes whitespace with MySQL comments .
@@ -217,7 +237,7 @@ module Enc
     # @param [String] data The string to encode
     # @return [String] The encoded string
     def MSSQL::char(data)
-      data.unpack("c*").map do |x|
+      Std::ord_as_ary(data).map do |x|
         "CHAR(#{x})"
       end.join("+")
     end
