@@ -9,42 +9,82 @@
 #
 # @author Patrick Hof
 
-require File.join(File.dirname(__FILE__), '..', 'lib', 'enc')
+require_relative File.join('..', 'lib', 'enc')
+require_relative File.join('..', 'lib', 'dec')
+require 'optparse'
+
+# Returns all methods the given module provides
+#
+# @param [Module] mod The module the check
+# @return [Array] array of strings with the methods
+def get_methods(mod)
+  methods = []
+  mod.constants.sort.each do |c|
+    mod.const_get(c).singleton_methods.sort.each do |m|
+      methods << "#{c}::#{m}"
+    end
+  end
+  methods
+end
 
 fname = File.basename(__FILE__)
-help_text = [
+methods = [
   "",
   "Available Encoders",
   "------------------"
 ]
-Enc.constants.sort.each do |c|
-  Enc.const_get(c).singleton_methods.sort.each do |m|
-    help_text << "#{c}::#{m}"
-  end
-end
-help_text += [
+methods += get_methods(Enc)
+methods += [
   "",
-  "Usage: #{fname} <encoder> [params] <string from stdin>",
+  "Available Decoders",
+  "------------------"
+]
+methods += get_methods(Dec)
+methods += [
   "",
   "Examples:",
   "#{fname} Std::url <<< '<script>'",
-  "#{fname} Std::url true <<< '<script>'",
+  "#{fname} -n Std::url true <<< '<script>'",
+  "",
+  "#{fname} -d Std::url <<< '%3Cscript%3E'",
+  "#{fname} -d -n Std::url true <<< '%3C%73%63%72%69%70%74%3E'",
   "",
   "Please see the YARD documentation for available parameters.",
   "",
   ""
 ]
-# Show help
-if ARGV[0] == "-h"
-  puts help_text.join("\n")
-# Run encoder 
-else
-  begin
-    mod, m = ARGV[0].split("::")
-    params = ARGV[1] ? ARGV[1].split(",") : []
-    puts Enc.const_get(mod.to_sym).send(m.to_sym, $stdin.read(), *params)
-  rescue Exception => e
-    puts "ERROR: #{e}"
-    puts help_text.join("\n")
+
+options = {
+  :nonewline => false,
+  :decoder   => false
+}
+popts = OptionParser.new do |opts|
+  opts.banner = "Usage: #{fname} [options] <(en|de)coder> [params] <string from stdin>"
+  opts.separator ""
+  opts.on("-d", "--decode", "Decode data") do
+    options[:decoder] = true
   end
+  opts.on("-n", "--no-newline", "Remove trailing newlines from input (default: #{options[:nonewline]})") do
+    options[:nonewline] = true
+  end
+  opts.on("-h", "--help", "Print this help") do
+    puts opts
+    puts methods
+  end
+end.parse!
+
+begin
+  mod, m = ARGV[0].split("::")
+  params = ARGV[1] ? ARGV[1].split(",") : []
+  data = $stdin.read()
+  data.chomp! if options[:nonewline]
+  if options[:decoder]
+    lib = Dec
+  else
+    lib = Enc
+  end
+  puts lib.const_get(mod.to_sym).send(m.to_sym, data, *params)
+rescue Exception => e
+  puts "ERROR: #{e}"
+  puts popts
 end
