@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = %q{2010-04-10}
   s.email = %q{courts@offensivethinking.org}
   s.files = ["README.markdown", "Rakefile", "bin/enc-cli", "lib/dec.rb", "lib/enc.rb", "test/spec_enc.rb", "test/spec_dec.rb"]
-  s.executables = ["enc-cli", "dec-cli"]
+  s.executables = ["enc-cli"]
   s.homepage = %q{http://www.offensivethinking.org}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
