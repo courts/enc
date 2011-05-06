@@ -14,10 +14,12 @@ command line clients are included.
 Command Line Usage
 ------------------
 
-There are basic command line clients in the /bin directory. Usage:
+There is a basic command line client in the /bin directory. Usage:
 
     enc-cli <encoder> [params] <string from stdin>
-    dec-cli <decoder> [params] <string from stdin>
+    enc-cli -d <decoder> [params] <string from stdin>
+
+See ``enc-cli -h`` for more information.
 
 Examples
 --------
@@ -27,10 +29,11 @@ Examples
     enc-cli Std::url true <<< 'http://www.example.com?aa=bb&cc=dd'
     %68%74%74%70%3A%2F%2F%77%77%77%2E%65%78%61%6D%70%6C%65%2E%63%6F%6D%3F%61%61%3D%62%62%26%63%63%3D%64%64%0A
 
-    dec-cli Std::url <<< 'http%3A%2F%2Fwww.example.com%3Faa%3Dbb%26cc%3Ddd'
+    enc-cli -d Std::url <<< 'http%3A%2F%2Fwww.example.com%3Faa%3Dbb%26cc%3Ddd'
     http://www.example.com?aa=bb&cc=dd
 
-Be aware of the trailing newline in the encoding example, which also gets encoded.
+Be aware of the trailing newline in the encoding example, which also gets
+encoded. To get rid of it, use the ``-n`` option.
 
 RubyGems
 --------

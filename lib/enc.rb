@@ -1,3 +1,5 @@
+# coding: utf-8
+
 require 'cgi'
 require 'base64'
 require 'yaml'
@@ -197,6 +199,26 @@ module Enc
         "&#x" + x + ";"
       end.join
     end
+
+    # HTML-encodes only umlauts to their HTML equivalent
+    #
+    # @param [String] data The string to encode
+    # @return [String] The encoded string
+    def HTML::umlauts(data)
+      umlauts = {
+        'ä' => '&auml;',
+        'ö' => '&ouml;',
+        'ü' => '&uuml;',
+        'Ä' => '&Auml;',
+        'Ö' => '&Ouml;',
+        'Ü' => '&Uuml;',
+        'ß' => '&szlig;'
+      }
+      umlauts.each do |umlaut, repr|
+        data.gsub!(umlaut, repr)
+      end
+      data
+    end
   end
 
   # JavaScript encoders.
@@ -207,7 +229,7 @@ module Enc
     # @param [String] data The string to encode
     # @return [String] The encoded string
     def JS::charcode(data)
-      "string.fromCharCode(" + Std::ord_as_ary(data).join(",") + ")"
+      "String.fromCharCode(" + Std::ord_as_ary(data).join(",") + ")"
     end
   end
 
