@@ -2,8 +2,8 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta name="Content-Type" content="text/html; charset=utf-8" />
-<title>Documentation by YARD 0.6.4</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documentation by YARD 0.6.8</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -43,7 +43,7 @@
     
     <div id="content"><div id='filecontents'><h1>Ruby Enc</h1>
 
-<p>Author:      Patrick Hof <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#99;&#111;&#117;&#114;&#116;&#115;&#64;&#111;&#102;&#102;&#101;&#x6e;&#115;&#x69;&#x76;&#101;&#x74;&#104;&#105;&#x6e;&#107;&#x69;&#x6e;&#103;&#x2e;&#x6f;&#x72;&#103;">&#99;&#111;&#117;&#114;&#116;&#x73;&#x40;&#x6f;&#x66;&#x66;&#x65;&#110;&#x73;&#x69;&#x76;&#x65;&#116;&#x68;&#105;&#110;&#x6b;&#105;&#x6e;&#x67;&#x2e;&#x6f;&#x72;&#103;</a><br/>
+<p>Author:      Patrick Hof <a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#99;&#x6f;&#x75;&#114;&#116;&#115;&#64;&#x6f;&#x66;&#x66;&#x65;&#110;&#x73;&#105;&#x76;&#x65;&#116;&#104;&#105;&#x6e;&#x6b;&#105;&#110;&#x67;&#46;&#111;&#x72;&#x67;">&#x63;&#111;&#x75;&#x72;&#x74;&#115;&#64;&#x6f;&#x66;&#102;&#x65;&#110;&#x73;&#105;&#118;&#101;&#116;&#104;&#105;&#110;&#107;&#105;&#x6e;&#x67;&#46;&#x6f;&#114;&#103;</a><br/>
 License:     <a href="http://creativecommons.org/publicdomain/zero/1.0/legalcode">CC0 1.0 Universal License</a></p>
 
 <p>Download:    git clone git@github.com:courts/enc.git<br/>
@@ -55,11 +55,13 @@ command line clients are included.</p>
 
 <h2>Command Line Usage</h2>
 
-<p>There are basic command line clients in the /bin directory. Usage:</p>
+<p>There is a basic command line client in the /bin directory. Usage:</p>
 
 <pre class="code">enc-cli &lt;encoder&gt; [params] &lt;string from stdin&gt;
-dec-cli &lt;decoder&gt; [params] &lt;string from stdin&gt;
+enc-cli -d &lt;decoder&gt; [params] &lt;string from stdin&gt;
 </pre>
+
+<p>See <code>enc-cli -h</code> for more information.</p>
 
 <h2>Examples</h2>
 
@@ -69,11 +71,12 @@ http%3A%2F%2Fwww.example.com%3Faa%3Dbb%26cc%3Ddd%0A
 enc-cli Std::url true &lt;&lt;&lt; 'http://www.example.com?aa=bb&amp;cc=dd'
 %68%74%74%70%3A%2F%2F%77%77%77%2E%65%78%61%6D%70%6C%65%2E%63%6F%6D%3F%61%61%3D%62%62%26%63%63%3D%64%64%0A
 
-dec-cli Std::url &lt;&lt;&lt; 'http%3A%2F%2Fwww.example.com%3Faa%3Dbb%26cc%3Ddd'
+enc-cli -d Std::url &lt;&lt;&lt; 'http%3A%2F%2Fwww.example.com%3Faa%3Dbb%26cc%3Ddd'
 http://www.example.com?aa=bb&amp;cc=dd
 </pre>
 
-<p>Be aware of the trailing newline in the encoding example, which also gets encoded.</p>
+<p>Be aware of the trailing newline in the encoding example, which also gets
+encoded. To get rid of it, use the <code>-n</code> option.</p>
 
 <h2>RubyGems</h2>
 
@@ -94,9 +97,9 @@ http://www.example.com?aa=bb&amp;cc=dd
 </div></div>
     
     <div id="footer">
-  Generated on Thu Feb 10 20:53:21 2011 by 
+  Generated on Fri May  6 17:45:18 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.4 (ruby-1.9.1).
+  0.6.8 (ruby-1.9.1).
 </div>
 
   </body>
