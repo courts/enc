@@ -92,7 +92,8 @@ describe Enc do
   end
 
   it "should return a Java byte array when sent Java::bytearray()" do
-    Java::bytearray("AA").should.equal 'byte data[] = new byte[] {(byte) 0x41, (byte) 0x41};'
+    res = Java::bytearray("AA").gsub("\n", "").gsub(/\s+/, " ")
+    res.should.equal ' byte data[] = new byte[] { (byte) 0x41, (byte) 0x41 };'
   end
 
   it "should return a MySQL hex representation when sent MySQL::hex()" do

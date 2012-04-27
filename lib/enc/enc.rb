@@ -255,6 +255,7 @@ module Enc
         #{java_ary.join(", ")}
       };
       JAVA
+      return ret
     end
   end
 
