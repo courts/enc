@@ -245,16 +245,14 @@ module Enc
     # @param [String] data The string to encode
     # @return [Strings] The encoded string in Java byte array notation
     # @todo Wrap lines after 8 bytes, to make it better readable
-    # @todo Write unit test
     def Java::bytearray(data)
       bytes = Std::hex_as_ary(data)
       java_ary = bytes.map {|x| "(byte) 0x#{x}"}
-      ret = <<-JAVA
-      byte data[] = new byte[]
-      {
-        #{java_ary.join(", ")}
-      };
-      JAVA
+      ret = "byte data[] = new byte[]\n{"
+      until java_ary.empty?
+        ret << "\n" + java_ary.shift(8).join(", ") + ","
+      end
+      ret << "\n};\n"
       return ret
     end
   end
