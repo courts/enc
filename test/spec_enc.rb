@@ -1,6 +1,6 @@
 # coding: utf-8
 require 'bacon'
-require File.join(File.dirname(__FILE__), '..', 'lib', 'enc')
+require 'enc/enc'
 
 include Enc
 
@@ -89,6 +89,10 @@ describe Enc do
 
   it "should return a JavaScript string.fromCharCode() representation when sent JS::charcode()" do
     JS::charcode(@url_text).should.equal 'String.fromCharCode(104,116,116,112,58,47,47,119,119,119,46,101,120,97,109,112,108,101,46,99,111,109,63,97,97,61,98,98,38,99,99,61,100,100)'
+  end
+
+  it "should return a Java byte array when sent Java::bytearray()" do
+    Java::bytearray("AA").should.equal 'byte data[] = new byte[] {(byte) 0x41, (byte) 0x41};'
   end
 
   it "should return a MySQL hex representation when sent MySQL::hex()" do

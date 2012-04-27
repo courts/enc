@@ -1,6 +1,6 @@
 # coding: utf-8
 require 'bacon'
-require File.join(File.dirname(__FILE__), '..', 'lib', 'dec')
+require 'enc/dec'
 
 include Dec
 

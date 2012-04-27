@@ -9,8 +9,8 @@
 #
 # @author Patrick Hof
 
-require_relative File.join('..', 'lib', 'enc')
-require_relative File.join('..', 'lib', 'dec')
+require 'enc/enc'
+require 'enc/dec'
 require 'optparse'
 
 # Returns all methods the given module provides

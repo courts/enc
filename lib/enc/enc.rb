@@ -233,6 +233,31 @@ module Enc
     end
   end
 
+  # Java encoders
+  module Java
+    # Encodes data as a Java byte array
+    #
+    # @example
+    #   Java::bytearray("AA")
+    #
+    #   byte data[] = new byte[] {(byte) 0x41, (byte) 0x41};
+    #
+    # @param [String] data The string to encode
+    # @return [Strings] The encoded string in Java byte array notation
+    # @todo Wrap lines after 8 bytes, to make it better readable
+    # @todo Write unit test
+    def Java::bytearray(data)
+      bytes = Std::hex_as_ary(data)
+      java_ary = bytes.map {|x| "(byte) 0x#{x}"}
+      ret = <<-JAVA
+      byte data[] = new byte[]
+      {
+        #{java_ary.join(", ")}
+      };
+      JAVA
+    end
+  end
+
   # Encoders returning valid MySQL strings.
   module MySQL
     # Returns the MySQL hex representation of data
