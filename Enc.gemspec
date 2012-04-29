@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.files = %w(README.markdown Rakefile bin/enc-cli lib/enc/dec.rb lib/enc/enc.rb test/spec_enc.rb test/spec_dec.rb)
   s.executables = ["enc-cli"]
   s.homepage = %q{http://www.offensivethinking.org}
-  s.require_paths = ["lib/enc"]
+  s.require_paths = ["lib"]
   s.summary = %q{A module implementing commonly used string encoders for various occasions.}
   s.description = <<-EOF
     A module implementing commonly used string encoders for various occasions.

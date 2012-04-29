@@ -239,18 +239,16 @@ module Enc
     #
     # @example
     #   Java::bytearray("AA")
-    #
-    #   byte data[] = new byte[] {(byte) 0x41, (byte) 0x41};
+    #   -> byte data[] = new byte[] {(byte) 0x41, (byte) 0x41};
     #
     # @param [String] data The string to encode
     # @return [Strings] The encoded string in Java byte array notation
-    # @todo Wrap lines after 8 bytes, to make it better readable
     def Java::bytearray(data)
       bytes = Std::hex_as_ary(data)
       java_ary = bytes.map {|x| "(byte) 0x#{x}"}
       ret = "byte data[] = new byte[]\n{"
       until java_ary.empty?
-        ret << "\n" + java_ary.shift(8).join(", ") + ","
+        ret << "\n   " + java_ary.shift(8).join(", ") + ","
       end
       ret << "\n};\n"
       return ret
