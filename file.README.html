@@ -2,17 +2,27 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documentation by YARD 0.6.8</title>
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.7.5
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
   relpath = '';
   if (relpath != '') relpath += '/';
 </script>
-<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
 
   </head>
   <body>
@@ -31,11 +41,14 @@
 </div>
 
       <div id="search">
-  <a id="class_list_link" href="#">Class List</a>
-  <a id="method_list_link" href="#">Method List</a>
-  <a id ="file_list_link" href="#">File List</a>
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
 </div>
-
       <div class="clear"></div>
     </div>
     
@@ -43,10 +56,10 @@
     
     <div id="content"><div id='filecontents'><h1>Ruby Enc</h1>
 
-<p>Author:      Patrick Hof <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#99;&#111;&#117;&#114;&#x74;&#115;&#x40;&#x6f;&#102;&#x66;&#101;&#110;&#x73;&#105;&#118;&#101;&#116;&#104;&#x69;&#x6e;&#107;&#x69;&#x6e;&#x67;&#46;&#111;&#x72;&#x67;">&#99;&#111;&#117;&#114;&#116;&#115;&#64;&#x6f;&#x66;&#x66;&#x65;&#x6e;&#115;&#x69;&#x76;&#101;&#x74;&#104;&#105;&#x6e;&#107;&#x69;&#110;&#x67;&#46;&#x6f;&#114;&#x67;</a><br/>
+<p>Author:      Patrick Hof <a href="mailto:courts@offensivethinking.org">courts@offensivethinking.org</a><br>
 License:     <a href="http://creativecommons.org/publicdomain/zero/1.0/legalcode">CC0 1.0 Universal License</a></p>
 
-<p>Download:    git clone git@github.com:courts/enc.git<br/>
+<p>Download:    git clone <a href="mailto:git@github.com">git@github.com</a>:courts/enc.git<br>
 YARD docs:   <a href="http://courts.github.com/enc">http://courts.github.com/enc</a></p>
 
 <p>Two modules implementing commonly used string encoders and decoders for various
@@ -57,15 +70,15 @@ command line clients are included.</p>
 
 <p>There is a basic command line client in the /bin directory. Usage:</p>
 
-<pre class="code">enc-cli &lt;encoder&gt; [params] &lt;string from stdin&gt;
+<pre class="code ruby"><code>enc-cli &lt;encoder&gt; [params] &lt;string from stdin&gt;
 enc-cli -d &lt;decoder&gt; [params] &lt;string from stdin&gt;
-</pre>
+</code></pre>
 
 <p>See <code>enc-cli -h</code> for more information.</p>
 
 <h2>Examples</h2>
 
-<pre class="code">enc-cli Std::url &lt;&lt;&lt; 'http://www.example.com?aa=bb&amp;cc=dd'
+<pre class="code ruby"><code>enc-cli Std::url &lt;&lt;&lt; 'http://www.example.com?aa=bb&amp;cc=dd'
 http%3A%2F%2Fwww.example.com%3Faa%3Dbb%26cc%3Ddd%0A
 
 enc-cli Std::url true &lt;&lt;&lt; 'http://www.example.com?aa=bb&amp;cc=dd'
@@ -73,7 +86,7 @@ enc-cli Std::url true &lt;&lt;&lt; 'http://www.example.com?aa=bb&amp;cc=dd'
 
 enc-cli -d Std::url &lt;&lt;&lt; 'http%3A%2F%2Fwww.example.com%3Faa%3Dbb%26cc%3Ddd'
 http://www.example.com?aa=bb&amp;cc=dd
-</pre>
+</code></pre>
 
 <p>Be aware of the trailing newline in the encoding example, which also gets
 encoded. To get rid of it, use the <code>-n</code> option.</p>
@@ -82,24 +95,24 @@ encoded. To get rid of it, use the <code>-n</code> option.</p>
 
 <p>A gemspec file is included, so you can build and install Enc as a gem with:</p>
 
-<pre class="code"><span class='id gem'>gem</span> <span class='id build'>build</span> <span class='const'>Enc</span><span class='period'>.</span><span class='id gemspec'>gemspec</span>
-<span class='id gem'>gem</span> <span class='id install'>install</span> <span class='const'>Enc</span><span class='op'>-</span><span class='id x'>x</span><span class='period'>.</span><span class='id x'>x</span><span class='period'>.</span><span class='id x'>x</span><span class='period'>.</span><span class='id gem'>gem</span>
-</pre>
+<pre class="code ruby"><code><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_build'>build</span> <span class='const'>Enc</span><span class='period'>.</span><span class='id identifier rubyid_gemspec'>gemspec</span>
+<span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='const'>Enc</span><span class='op'>-</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_gem'>gem</span>
+</code></pre>
 
-<hr />
+<hr>
 
 <p>Inspired by:</p>
 
 <ul>
-<li><a href="http://www.edge-security.com/wfuzz.php">wfuzz</a></li>
-<li><a href="http://github.com/emonti/rbkb">rbkb</a></li>
+<li>  <a href="http://www.edge-security.com/wfuzz.php">wfuzz</a></li>
+<li>  <a href="http://github.com/emonti/rbkb">rbkb</a></li>
 </ul>
 </div></div>
     
     <div id="footer">
-  Generated on Fri May  6 17:45:18 2011 by 
+  Generated on Wed May  2 21:23:39 2012 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.8 (ruby-1.9.1).
+  0.7.5 (ruby-1.9.3).
 </div>
 
   </body>

@@ -3,16 +3,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Module: Dec::HTML</title>
-<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+<title>
+  Module: Dec::HTML
+  
+    &mdash; Documentation by YARD 0.7.5
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
   relpath = '..';
   if (relpath != '') relpath += '/';
 </script>
-<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
 
   </head>
   <body>
@@ -33,11 +43,14 @@
 </div>
 
       <div id="search">
-  <a id="class_list_link" href="#">Class List</a>
-  <a id="method_list_link" href="#">Method List</a>
-  <a id ="file_list_link" href="#">File List</a>
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
 </div>
-
       <div class="clear"></div>
     </div>
     
@@ -59,23 +72,27 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/dec.rb</dd>
+    <dd class="r1 last">lib/enc/dec.rb</dd>
   
 </dl>
 <div class="clear"></div>
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>
-Encoders converting strings to valid HTML.
-</p>
+    
+<p>Encoders converting strings to valid HTML.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+
 </div>
+
+
+
+
 
 
   
@@ -102,9 +119,8 @@ Encoders converting strings to valid HTML.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-HTML decodes a string.
-</p>
+    <span class="summary_desc"><div class='inline'>
+<p>HTML decodes a string.</p>
 </div></span>
   
 </li>
@@ -128,9 +144,8 @@ HTML decodes a string.
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>
-HTML decodes a string
-</p>
+    
+<p>HTML decodes a string</p>
 
 
   </div>
@@ -141,36 +156,35 @@ HTML decodes a string
   
     <li>
       
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
         <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>
-The string to decode
-</p>
+        <div class='inline'>
+<p>The string to decode</p>
 </div>
       
     </li>
   
 </ul>
+
 <h3>Returns:</h3>
 <ul class="return">
   
     <li>
       
+      
         <span class='type'>(<tt>String</tt>)</span>
       
       
       
-      
         &mdash;
-        <div class='inline'><p>
-The decoded string
-</p>
+        <div class='inline'>
+<p>The decoded string</p>
 </div>
       
     </li>
@@ -188,10 +202,10 @@ The decoded string
 76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/dec.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/enc/dec.rb', line 74</span>
 
-<span class='kw'>def</span> <span class='const'>HTML</span><span class='op'>::</span><span class='id html'>html</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
-  <span class='const'>CGI</span><span class='period'>.</span><span class='id unescapeHTML'>unescapeHTML</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='const'>HTML</span><span class='op'>::</span><span class='id identifier rubyid_html'>html</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_unescapeHTML'>unescapeHTML</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -203,9 +217,9 @@ The decoded string
 </div>
     
     <div id="footer">
-  Generated on Fri May  6 17:45:18 2011 by 
+  Generated on Wed May  2 21:23:41 2012 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.8 (ruby-1.9.1).
+  0.7.5 (ruby-1.9.3).
 </div>
 
   </body>

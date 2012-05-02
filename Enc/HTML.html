@@ -3,16 +3,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Module: Enc::HTML</title>
-<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+<title>
+  Module: Enc::HTML
+  
+    &mdash; Documentation by YARD 0.7.5
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
   relpath = '..';
   if (relpath != '') relpath += '/';
 </script>
-<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
 
   </head>
   <body>
@@ -33,11 +43,14 @@
 </div>
 
       <div id="search">
-  <a id="class_list_link" href="#">Class List</a>
-  <a id="method_list_link" href="#">Method List</a>
-  <a id ="file_list_link" href="#">File List</a>
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
 </div>
-
       <div class="clear"></div>
     </div>
     
@@ -59,23 +72,27 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/enc.rb</dd>
+    <dd class="r1 last">lib/enc/enc.rb</dd>
   
 </dl>
 <div class="clear"></div>
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>
-Encoders converting strings to valid HTML.
-</p>
+    
+<p>Encoders converting strings to valid HTML.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+
 </div>
+
+
+
+
 
 
   
@@ -102,9 +119,8 @@ Encoders converting strings to valid HTML.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-Decimal HTML encodes a string (e.g. &#8220;a&#8221; => &amp;#97;.
-</p>
+    <span class="summary_desc"><div class='inline'>
+<p>Decimal HTML encodes a string (e.g. "a" =&gt; &amp;#97;.</p>
 </div></span>
   
 </li>
@@ -126,9 +142,8 @@ Decimal HTML encodes a string (e.g. &#8220;a&#8221; => &amp;#97;.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-HTML hex encodes a string.
-</p>
+    <span class="summary_desc"><div class='inline'>
+<p>HTML hex encodes a string.</p>
 </div></span>
   
 </li>
@@ -150,9 +165,8 @@ HTML hex encodes a string.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-HTML encodes a string.
-</p>
+    <span class="summary_desc"><div class='inline'>
+<p>HTML encodes a string.</p>
 </div></span>
   
 </li>
@@ -174,9 +188,8 @@ HTML encodes a string.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-HTML-encodes only umlauts to their HTML equivalent.
-</p>
+    <span class="summary_desc"><div class='inline'>
+<p>HTML-encodes only umlauts to their HTML equivalent.</p>
 </div></span>
   
 </li>
@@ -200,9 +213,8 @@ HTML-encodes only umlauts to their HTML equivalent.
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>
-Decimal HTML encodes a string (e.g. &#8220;a&#8221; => &amp;#97;
-</p>
+    
+<p>Decimal HTML encodes a string (e.g. "a" =&gt; &amp;#97;</p>
 
 
   </div>
@@ -213,36 +225,35 @@ Decimal HTML encodes a string (e.g. &#8220;a&#8221; => &amp;#97;
   
     <li>
       
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
         <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>
-The string to encode
-</p>
+        <div class='inline'>
+<p>The string to encode</p>
 </div>
       
     </li>
   
 </ul>
+
 <h3>Returns:</h3>
 <ul class="return">
   
     <li>
       
+      
         <span class='type'>(<tt>String</tt>)</span>
       
       
       
-      
         &mdash;
-        <div class='inline'><p>
-The encoded string
-</p>
+        <div class='inline'>
+<p>The encoded string</p>
 </div>
       
     </li>
@@ -262,12 +273,12 @@ The encoded string
 191</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 187</span>
+      <pre class="code"><span class="info file"># File 'lib/enc/enc.rb', line 187</span>
 
-<span class='kw'>def</span> <span class='const'>HTML</span><span class='op'>::</span><span class='id dec'>dec</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
-  <span class='const'>Std</span><span class='op'>::</span><span class='id ord_as_ary'>ord_as_ary</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id x'>x</span><span class='op'>|</span>
-    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&amp;#</span><span class='embexpr_beg'>#{</span><span class='id x'>x</span><span class='rbrace'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span><span class='period'>.</span><span class='id join'>join</span>
+<span class='kw'>def</span> <span class='const'>HTML</span><span class='op'>::</span><span class='id identifier rubyid_dec'>dec</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='const'>Std</span><span class='op'>::</span><span class='id identifier rubyid_ord_as_ary'>ord_as_ary</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&amp;#</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='rbrace'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -283,9 +294,8 @@ The encoded string
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>
-HTML hex encodes a string
-</p>
+    
+<p>HTML hex encodes a string</p>
 
 
   </div>
@@ -296,36 +306,35 @@ HTML hex encodes a string
   
     <li>
       
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
         <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>
-The string to encode
-</p>
+        <div class='inline'>
+<p>The string to encode</p>
 </div>
       
     </li>
   
 </ul>
+
 <h3>Returns:</h3>
 <ul class="return">
   
     <li>
       
+      
         <span class='type'>(<tt>String</tt>)</span>
       
       
       
-      
         &mdash;
-        <div class='inline'><p>
-The encoded string
-</p>
+        <div class='inline'>
+<p>The encoded string</p>
 </div>
       
     </li>
@@ -345,12 +354,12 @@ The encoded string
 201</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 197</span>
+      <pre class="code"><span class="info file"># File 'lib/enc/enc.rb', line 197</span>
 
-<span class='kw'>def</span> <span class='const'>HTML</span><span class='op'>::</span><span class='id hex'>hex</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
-  <span class='const'>Std</span><span class='op'>::</span><span class='id hex_as_ary'>hex_as_ary</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id x'>x</span><span class='op'>|</span>
-    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&amp;#x</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id x'>x</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span><span class='period'>.</span><span class='id join'>join</span>
+<span class='kw'>def</span> <span class='const'>HTML</span><span class='op'>::</span><span class='id identifier rubyid_hex'>hex</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='const'>Std</span><span class='op'>::</span><span class='id identifier rubyid_hex_as_ary'>hex_as_ary</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&amp;#x</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -366,9 +375,8 @@ The encoded string
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>
-HTML encodes a string
-</p>
+    
+<p>HTML encodes a string</p>
 
 
   </div>
@@ -379,36 +387,35 @@ HTML encodes a string
   
     <li>
       
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
         <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>
-The string to encode
-</p>
+        <div class='inline'>
+<p>The string to encode</p>
 </div>
       
     </li>
   
 </ul>
+
 <h3>Returns:</h3>
 <ul class="return">
   
     <li>
       
+      
         <span class='type'>(<tt>String</tt>)</span>
       
       
       
-      
         &mdash;
-        <div class='inline'><p>
-The encoded string
-</p>
+        <div class='inline'>
+<p>The encoded string</p>
 </div>
       
     </li>
@@ -426,10 +433,10 @@ The encoded string
 181</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 179</span>
+      <pre class="code"><span class="info file"># File 'lib/enc/enc.rb', line 179</span>
 
-<span class='kw'>def</span> <span class='const'>HTML</span><span class='op'>::</span><span class='id html'>html</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
-  <span class='const'>CGI</span><span class='period'>.</span><span class='id escapeHTML'>escapeHTML</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='const'>HTML</span><span class='op'>::</span><span class='id identifier rubyid_html'>html</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='const'>CGI</span><span class='period'>.</span><span class='id identifier rubyid_escapeHTML'>escapeHTML</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -445,9 +452,8 @@ The encoded string
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>
-HTML-encodes only umlauts to their HTML equivalent
-</p>
+    
+<p>HTML-encodes only umlauts to their HTML equivalent</p>
 
 
   </div>
@@ -458,36 +464,35 @@ HTML-encodes only umlauts to their HTML equivalent
   
     <li>
       
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
         <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
         &mdash;
-        <div class='inline'><p>
-The string to encode
-</p>
+        <div class='inline'>
+<p>The string to encode</p>
 </div>
       
     </li>
   
 </ul>
+
 <h3>Returns:</h3>
 <ul class="return">
   
     <li>
       
+      
         <span class='type'>(<tt>String</tt>)</span>
       
       
       
-      
         &mdash;
-        <div class='inline'><p>
-The encoded string
-</p>
+        <div class='inline'>
+<p>The encoded string</p>
 </div>
       
     </li>
@@ -517,10 +522,10 @@ The encoded string
 221</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/enc.rb', line 207</span>
+      <pre class="code"><span class="info file"># File 'lib/enc/enc.rb', line 207</span>
 
-<span class='kw'>def</span> <span class='const'>HTML</span><span class='op'>::</span><span class='id umlauts'>umlauts</span><span class='lparen'>(</span><span class='id data'>data</span><span class='rparen'>)</span>
-  <span class='id umlauts'>umlauts</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+<span class='kw'>def</span> <span class='const'>HTML</span><span class='op'>::</span><span class='id identifier rubyid_umlauts'>umlauts</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_umlauts'>umlauts</span> <span class='op'>=</span> <span class='lbrace'>{</span>
     <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ä</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>&amp;auml;</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ö</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>&amp;ouml;</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ü</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>&amp;uuml;</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
@@ -529,10 +534,10 @@ The encoded string
     <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Ü</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>&amp;Uuml;</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ß</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>&amp;szlig;</span><span class='tstring_end'>'</span></span>
   <span class='rbrace'>}</span>
-  <span class='id umlauts'>umlauts</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id umlaut'>umlaut</span><span class='comma'>,</span> <span class='id repr'>repr</span><span class='op'>|</span>
-    <span class='id data'>data</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='id umlaut'>umlaut</span><span class='comma'>,</span> <span class='id repr'>repr</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_umlauts'>umlauts</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_umlaut'>umlaut</span><span class='comma'>,</span> <span class='id identifier rubyid_repr'>repr</span><span class='op'>|</span>
+    <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_gsub!'>gsub!</span><span class='lparen'>(</span><span class='id identifier rubyid_umlaut'>umlaut</span><span class='comma'>,</span> <span class='id identifier rubyid_repr'>repr</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
-  <span class='id data'>data</span>
+  <span class='id identifier rubyid_data'>data</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -544,9 +549,9 @@ The encoded string
 </div>
     
     <div id="footer">
-  Generated on Fri May  6 17:45:18 2011 by 
+  Generated on Wed May  2 21:23:40 2012 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.8 (ruby-1.9.1).
+  0.7.5 (ruby-1.9.3).
 </div>
 
   </body>
